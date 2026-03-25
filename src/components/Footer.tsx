@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin, Instagram, Facebook, Twitter } from "lucide-react";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -9,7 +10,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Logo & Info */}
           <div className="col-span-1 md:col-span-1">
-            <h3 className="text-2xl font-bold mb-6">IVOMO</h3>
+            <Link href="/" className="block mb-6">
+              <Logo light />
+            </Link>
             <p className="text-organic-leaf mb-6">
               Empowering local communities through responsible tourism in South-West Rwanda.
             </p>

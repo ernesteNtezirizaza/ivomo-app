@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Trees as Tree, Menu, X, Calendar, User, Phone } from "lucide-react";
+import { Menu, X, Calendar, User, Phone } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,13 +32,8 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white group-hover:rotate-12 transition-transform">
-              <Tree size={24} />
-            </div>
-            <span className={`text-2xl font-bold transition-colors ${!scrolled && isHome ? "text-white" : "text-primary"}`}>
-              IVOMO
-            </span>
+          <Link href="/" className="group">
+            <Logo light={!scrolled && isHome} />
           </Link>
 
           {/* Desktop Links */}
